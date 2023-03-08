@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app"
 
 export default defineNuxtPlugin((NuxtApp) => {
-	const { FIREBASE_API_KEY } = useRuntimeConfig()
+	const { FIREBASE_API_KEY } = useRuntimeConfig().public
 
 	// Config firebase
 	const firebaseConfig = {
