@@ -1,9 +1,8 @@
 <template>
-    <div>
+    <div class="container mx-auto">
         <div>
             <NuxtLink to="/secret">Go to secret page</NuxtLink>
         </div>
-        <button class="button is-primary" @click="signIn" v-if="!firebaseUser">Sign In</button>
         <button class="button is-danger" @click="signOut" v-if="firebaseUser">Sign Out</button>
         <div v-if="firebaseUser">
             <client-only>
@@ -16,13 +15,6 @@
 
 <script setup>
 const firebaseUser = useFirebaseUser()
-
-async function signIn() {
-    const email = 'test1@gmail.com'
-    const password = '123456'
-    await signInUser(email, password)
-}
-
 async function signOut() {
     await signOutUser()
 }

@@ -26,7 +26,6 @@
 </template>
   
 <script setup>
-// import { signOutUser } from "../composables/useFirebase";
 const timeout = ref(null)
 const registerForm = ref({ 
     email: "", 
