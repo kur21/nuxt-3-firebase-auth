@@ -4,5 +4,5 @@ export default defineEventHandler((event) => {
 	// return cookie
     
     // console.log(event.context);
-    return event.context.cookie
+    return event.context.cookie ? event.context.cookie : 'User is signed out'
 })

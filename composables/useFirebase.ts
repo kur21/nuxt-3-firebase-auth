@@ -40,6 +40,12 @@ export const initUser = async () => {
         firebaseUser.value = user
         //@ts-ignore
         userCookie.value = user
+
+        // Test call api
+        $fetch('/api/auth', {
+            method: 'POST',
+            body: { user }
+        })
 	})
 }
 
