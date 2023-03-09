@@ -31,7 +31,6 @@ const signInForm = ref({
 });
 
 const register = async () => {
-    console.log(registerForm.value);
     const credentials = await createUser(registerForm.value.email, registerForm.value.password);
     registerForm.value = { email: "", password: "" };
     if (credentials) {
@@ -44,7 +43,6 @@ const register = async () => {
 };
 
 const signIn = () => {
-    console.log(signInForm.value);
     signInUser(signInForm.value.email, signInForm.value.password);
     signInForm.value = { email: "", password: "" };
 };

@@ -26,6 +26,8 @@ export const initUser = async () => {
     const firebaseUser = useFirebaseUser()
     firebaseUser.value = auth.currentUser
 
+    const userCookie = useCookie('userCookie')
+    
 	onAuthStateChanged(auth, (user) => {
 		if (user) {
 			// User is signed in, see docs for a list of available properties
@@ -36,6 +38,8 @@ export const initUser = async () => {
             // console.log('Auth changed:', user)
 		}
         firebaseUser.value = user
+        //@ts-ignore
+        userCookie.value = user
 	})
 }
 
